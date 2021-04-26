@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #07141b;
+}
+body.light {
+    background: #d1dae3;
+}
+.clock {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('clock-hand.png');
+    border-radius: 50%;
+    box-shadow: -3px -3px 7px rgb(94 104 121 / 29%), 3px 3px 5px rgba(94,104,121,0.188);
+}
+body.light .clock {
+    box-shadow: -3px -3px 7px #ffffff50, 3px 3px 5px rgba(94,104,121,0.188);
+}
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+.clock .hour, .hr {
+    width: 160px;
+    height: 160px;
+} 
+.clock .min, .mn {
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc {
+    width: 230px;
+    height: 230px;
+}
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+
+}
+.hr:before {
+    content: '';
+    position: absolute;
+    width: 7.5px;
+    height: 80px;
+    background: #f81460;
+    z-index: 10;
+    border-radius: 2.8px;
+}
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 3.5px;
+    height: 100px;
+    background: #ffffff;
+    z-index: 11;
+    border-radius: 3px;
+}
+body.light .mn:before {
+    background: #091921;
+}
+.sc:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: #0075fa80;
+    z-index: 12;
+    border-radius: 3px;
+}
+
+
+
+/*toggle btn*/
+.label {
+    position: absolute;
+    cursor: pointer;
+    top: 25px;
+    left: 25px;
+}
+.stylish-toggle {
+    height: 100%;
+    width: 200%;
+    background: #ffffff80;
+    border-radius: 35px;
+    transform: translate3d(-75%, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+body.light .stylish-toggle {
+    background: #ecc208;
+    box-shadow: 0 0 10px 1px #ecc208;
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+.toggle-button {
+    isolation: isolate;
+    position: relative;
+    height: 40px;
+    width: 80px;
+    background-color: transparent;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #ffffff40;
+    box-shadow: 3px 3px 5px #ffffff73, -3px -3px 7px rgba(94,104,121,0.288);
+}
+body.light .toggle-button {
+    transition: all 0.3s ease;
+    background-color: white;
+}
+.toggle-input {
+    display: none;
+}
+.toggle-input:checked ~ .stylish-toggle {
+    transform: translate3d(25%, 0, 0);
+}
